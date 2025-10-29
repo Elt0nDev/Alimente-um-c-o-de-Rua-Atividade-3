@@ -1,81 +1,108 @@
-<p>Se quiser colaborar com doações físicas, traga em nossos pontos de coleta; ou use os dados abaixo para transferência:
-</p>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cadastro — Alimente um Cão de Rua</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Voltar ao início">
+        <img src="jpg.1.jpg" alt="Logotipo ONG" class="logo" />
+        <div>
+          <h1 class="brand-title">Alimente um Cão de Rua</h1>
+        </div>
+      </a>
 
-<address>
-    Banco: Banco Exemplo<br />
-    Agência: 0000 — Conta: 000000-0<br />
-    CNPJ: 00.000.000/0000-00
-</address>
+      <button id="btn-menu-3" class="menu-button" aria-expanded="false" aria-controls="site-nav-3">☰</button>
 
-<section id="estatisticas">
-    <h2>Estatísticas de Doações — Ano 2025</h2>
-    <p>Acompanhe o volume de doações recebidas ao longo do ano:</p>
-    <!DOCTYPE html>
-    <html lang="pt-BR">
+      <nav id="site-nav-3" class="site-nav" role="navigation">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="cadastro.html" aria-current="page">Cadastro</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <head>
-        <meta charset="UTF-8">
-        <title>Gráfico de Doações - ONG Alimente um Cão de Rua</title>
-    </head>
+  <main class="container">
+    <section id="form-cadastro" class="cadastro">
+      <h2>Cadastro — Quero ajudar / Voluntariar / Doar</h2>
+      <p>Preencha o formulário abaixo. Em seguida entraremos em contato.</p>
 
-    <body>
-        <h2>Gráfico de Doações — Ano 2025</h2>
-        <p>Representação das doações mensais em barras verticais (HTML puro)</p>
+      <form id="signupForm" class="form" novalidate>
+        <div class="grid-2">
+          <label>
+            Nome completo
+            <input type="text" name="nome" id="nome" required placeholder="Seu nome completo">
+          </label>
+          <label>
+            Telefone / WhatsApp
+            <input type="tel" name="telefone" id="telefone" required placeholder="+55 (11) 9XXXX-XXXX">
+          </label>
+        </div>
 
-        <table border="0" cellspacing="5" cellpadding="0" align="center">
-            <tr valign="bottom">
-                <td align="center">
-                    <div style="background:green; height:80px; width:30px;"></div>
-                    <small>Jan</small>
-                </td>
-                <td align="center">
-                    <div style="background:green; height:60px; width:30px;"></div>
-                    <small>Fev</small>
-                </td>
-                <td align="center">
-                    <div style="background:green; height:100px; width:30px;"></div>
-                    <small>Mar</small>
-                </td>
-                <td align="center">
-                    <div style="background:green; height:120px; width:30px;"></div>
-                    <small>Abr</small>
-                </td>
-                <td align="center">
-                    <div style="background:green; height:90px; width:30px;"></div>
-                    <small>Mai</small>
-                </td>
-                <td align="center">
-                    <div style="background:green; height:140px; width:30px;"></div>
-                    <small>Jun</small>
-                </td>
-                <td align="center">
-                    <div style="background:green; height:160px; width:30px;"></div>
-                    <small>Jul</small>
-                </td>
-                <td align="center">
-                    <div style="background:green; height:150px; width:30px;"></div>
-                    <small>Ago</small>
-                </td>
-                <td align="center">
-                    <div style="background:green; height:130px; width:30px;"></div>
-                    <small>Set</small>
-                </td>
-                <td align="center">
-                    <div style="background:green; height:180px; width:30px;"></div>
-                    <small>Out</small>
-                </td>
-                <td align="center">
-                    <div style="background:green; height:160px; width:30px;"></div>
-                    <small>Nov</small>
-                </td>
-                <td align="center">
-                    <div style="background:green; height:200px; width:30px;"></div>
-                    <small>Dez</small>
-                </td>
-            </tr>
-        </table>
+        <label>
+          E-mail
+          <input type="email" name="email" id="email" required placeholder="seu@email.com">
+        </label>
 
-        <p align="center"><strong>Total arrecadado em 2025: R$ 74.700,00</strong></p>
-    </body>
+        <label>
+          Você quer:
+          <select name="interesse" id="interesse" required>
+            <option value="">Escolha...</option>
+            <option value="voluntario">Voluntariado</option>
+            <option value="doacao">Doação</option>
+            <option value="adocao">Adoção / Lar temporário</option>
+            <option value="outros">Outros</option>
+          </select>
+        </label>
 
-    </html>
+        <label>
+          Mensagem / Observações
+          <textarea name="mensagem" id="mensagem" rows="4" placeholder="Ex.: posso ajudar nas tardes — moro próximo..."></textarea>
+        </label>
+
+        <p class="form-actions">
+          <button type="submit" class="btn">Enviar cadastro</button>
+          <button type="reset" class="btn btn-outline">Limpar</button>
+        </p>
+
+        <div id="formMessage" role="status" aria-live="polite"></div>
+      </form>
+
+      <section class="donation-info">
+        <h3>Doações físicas</h3>
+        <p>Se quiser colaborar com doações físicas, traga nos pontos de coleta; ou use os dados abaixo para transferência:</p>
+        <address>
+          <strong>Banco:</strong> Banco Exemplo<br>
+          <strong>Agência:</strong> 0000 — <strong>Conta:</strong> 000000-0<br>
+          <strong>CNPJ:</strong> 00.000.000/0000-00
+        </address>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>Contato</h4>
+        <p>Telefone: <a href="tel:+5511999999999">+55 (11) 99999-9999</a></p>
+      </div>
+      <div>
+        <h4>Redes</h4>
+        <p><a href="#">Facebook</a> | <a href="#">Instagram</a></p>
+      </div>
+    </div>
+
+    <div class="container copyright">
+      <p>© <span id="ano-3">2025</span> Alimente um Cão de Rua — Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
