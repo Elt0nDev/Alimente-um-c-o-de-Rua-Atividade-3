@@ -4,14 +4,12 @@
 // MENU HAMBÚRGUER RESPONSIVO
 // ==========================
 const menuToggle = document.querySelector('.menu-toggle');
-const navMenu = document.querySelector('.nav-menu'); // Classe adicionada no HTML
+const navMenu = document.querySelector('.nav-menu');
 
-if (menuToggle && navMenu) {
-    menuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        menuToggle.classList.toggle('open');
-    });
-}
+menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    menuToggle.classList.toggle('open');
+});
 
 // ==========================
 // SUBMENU DROPDOWN
@@ -48,7 +46,7 @@ if (form) {
         });
 
         if (valid) {
-            showToast('Formulário enviado com sucesso! Entraremos em contato.', 'success');
+            showToast('Formulário enviado com sucesso!', 'success');
             form.reset();
         } else {
             showToast('Por favor, preencha todos os campos obrigatórios.', 'error');
@@ -77,24 +75,21 @@ const modal = document.querySelector('.modal');
 const modalBtn = document.querySelector('.open-modal');
 const closeModal = document.querySelector('.close-modal');
 
-if (modalBtn && modal) {
+if (modalBtn) {
     modalBtn.addEventListener('click', () => {
         modal.classList.add('active');
     });
 }
 
-if (closeModal && modal) {
+if (closeModal) {
     closeModal.addEventListener('click', () => {
         modal.classList.remove('active');
     });
 }
 
 // Fechar modal clicando fora
-if (modal) {
-    window.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.classList.remove('active');
-        }
-    });
-}
-
+window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.classList.remove('active');
+    }
+});
