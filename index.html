@@ -1,57 +1,125 @@
 <!doctype html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Alimente um Cão de Rua — ONG</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Alimente um Cão de Rua — ONG</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <header>
-        <h1>Alimente um Cão de Rua</h1>
-        <p>ONG dedicada ao resgate, alimentação e cuidado de cães em situação de rua.</p>
-        <nav>
-            <ul>
-                <ul>
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="projetos.html">Projetos</a></li>
-                    <li><a href="cadastro.html">Cadastro</a></li>
-                </ul>
-            </ul>
-        </nav>
-    </header>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Alimente um Cão de Rua — Início">
+        <img src="jpg.1.jpg" alt="Logotipo ONG Alimente um Cão de Rua" class="logo" />
+        <div>
+          <h1 class="brand-title">Alimente um Cão de Rua</h1>
+          <p class="brand-sub">Resgate — Alimentação — Adoção responsável</p>
+        </div>
+      </a>
 
-    <main>
-        <section id="hero">
-            <!-- imagem principal / logo -->
-            <figure>
-                <figure>
-                    <figure>
-                        <img src="17683206-ilustracao-em-logotipo-de-silhueta-de-loja-de-animais-gratis-vetor.jpg"
-                            alt="Logotipo: silhueta de cachorro dentro de círculo" width="200" align="left" />
-                        <figcaption>Alimente um Cão de Rua — Juntos podemos salvar vidas.</figcaption>
-                    </figure>
+      <button id="btn-menu" class="menu-button" aria-expanded="false" aria-controls="site-nav">
+        ☰ <span class="sr-only">Abrir menu</span>
+      </button>
 
-                    <section id="sobre">
-                        <h2>Sobre a ONG</h2>
-                        <p>
-                            A ONG Alimente um Cão de Rua tem como missão oferecer alimento, abrigo temporário
-                            e encaminhamento para castração e adoção responsável. Atuamos em bairros vulneráveis,
-                            resgatando animais abandonados e trabalhando com voluntários e profissionais para devolver
-                            dignidade a esses cães.
-                        </p>
-                        <footer id="contato">
-                            <h2>Contato</h2>
-                            <p>Telefone/WhatsApp: <a href="tel:+5511999999999">+55 (11) 99999-9999</a></p>
-                            <p>E-mail: <a
-                                    href="mailto:contato@alimenteumcaoderua.org">contato@alimenteumcaoderua.org</a></p>
-                            <p>Endereço: Rua Exemplo, 123 — Bairro — Cidade/UF</p>
+      <nav id="site-nav" class="site-nav" role="navigation">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-                            <p>Redes sociais:
-                                <a href="#" aria-label="Link para Facebook">Facebook</a> |
-                                <a href="#" aria-label="Link para Instagram">Instagram</a>
-                            </p>
+  <main>
+    <section id="hero" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h2>Juntos podemos salvar vidas</h2>
+          <p>Somos uma ONG dedicada ao resgate, alimentação, cuidados veterinários e encaminhamento para adoção responsável de cães em situação de rua.</p>
+          <p class="cta-row">
+            <a href="projetos.html" class="btn">Conheça nossos projetos</a>
+            <a href="cadastro.html" class="btn btn-outline">Quero ajudar / me cadastrar</a>
+          </p>
+        </div>
 
-                            <p>© <span id="ano">2025</span> Alimente um Cão de Rua — Todos os direitos reservados.</p>
-                        </footer>
+        <figure class="hero-figure" aria-hidden="false">
+          <img src="jpg.2.webp" alt="Cãozinho dormindo em pano, representando cães de rua" />
+          <figcaption class="sr-only">Cãozinho em situação de rua</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="sobre" class="container sobre">
+      <h2>Sobre a ONG</h2>
+      <p>A ONG <strong>Alimente um Cão de Rua</strong> trabalha com voluntários e clínicas parceiras para resgatar animais, fornecer alimentação e tratamento, além de promover castração e adoção responsável.</p>
+
+      <div class="values-grid">
+        <article>
+          <h3>Resgate</h3>
+          <p>Resgatamos animais em risco em parceria com brigadas, bombeiros e moradores locais.</p>
+        </article>
+
+        <article>
+          <h3>Veterinária</h3>
+          <p>Atendimento e tratamento em clínicas parceiras. Medicamentos e castração quando necessário.</p>
+        </article>
+
+        <article>
+          <h3>Adoção</h3>
+          <p>Feiras periódicas de adoção e uma rede de lares temporários para socialização antes da adoção definitiva.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="estatisticas" class="container estatisticas">
+      <div class="estatisticas-inner">
+        <div>
+          <h2>Estatísticas de Doações (2025)</h2>
+          <p>Acompanhe as doações mensais recebidas — usamos essas verbas para ração, tratamento e castração.</p>
+          <canvas id="donationChart" width="800" height="300" aria-label="Gráfico de doações mensais"></canvas>
+          <p class="total">Total arrecadado em 2025: <strong id="total-raised">R$ 0,00</strong></p>
+        </div>
+
+        <aside class="estat-help">
+          <h3>Como ajudar</h3>
+          <ul>
+            <li>Doações de ração, cobertores e medicamentos</li>
+            <li>Voluntariado para alimentar e socializar os cães</li>
+            <li>Divulgação e adoção responsável</li>
+            <li>Doações financeiras via conta ou pontos de coleta</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>Contato</h4>
+        <p>Telefone/WhatsApp: <a href="tel:+5511999999999">+55 (11) 99999-9999</a></p>
+        <p>E-mail: <a href="mailto:contato@alimenteumcaoderua.org">contato@alimenteumcaoderua.org</a></p>
+        <p>Endereço: Rua Exemplo, 123 — Cidade/UF</p>
+      </div>
+
+      <div>
+        <h4>Banco / Doações</h4>
+        <p>Banco: Banco Exemplo — Agência: 0000 — Conta: 000000-0</p>
+        <p>CNPJ: 00.000.000/0000-00</p>
+      </div>
+
+      <div>
+        <h4>Siga-nos</h4>
+        <p><a href="#" aria-label="Facebook">Facebook</a> | <a href="#" aria-label="Instagram">Instagram</a></p>
+      </div>
+    </div>
+
+    <div class="container copyright">
+      <p>© <span id="ano">2025</span> Alimente um Cão de Rua — Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
