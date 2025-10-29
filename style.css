@@ -1,312 +1,535 @@
-/* ================================
-   🎨 DESIGN SYSTEM
-================================ */
+/* ===============================
+   1. DESIGN SYSTEM: VARIÁVEIS CSS
+   ================================ */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Poppins:wght@500;700&display=swap');
+
 :root {
-    /* Paleta de Cores */
-    --color-primary: #e67e22;
-    --color-primary-dark: #b35f13;
-    --color-secondary: #3498db;
-    --color-secondary-dark: #217dbb;
-    --color-neutral-100: #ffffff;
-    --color-neutral-200: #f4f4f4;
-    --color-neutral-400: #999;
-    --color-neutral-800: #2c3e50;
-    --color-success: #27ae60;
-    --color-danger: #e74c3c;
+    /* PALETA DE CORES (Ajustada para a causa animal) */
+    --cor-primaria-base: #4CAF50;    /* Verde Esperança (Ação/Sucesso) */
+    --cor-primaria-escuro: #388E3C; /* Verde Escuro (Botão Hover) */
+    --cor-secundaria-base: #FF9800; /* Laranja Cuidado (Destaque/Alerta) */
+    --cor-secundaria-claro: #ffb74d;/* Laranja Claro */
+    
+    --cor-neutra-fundo: #f8f8f8;    /* Fundo Claro e Suave */
+    --cor-neutra-clara: #ffffff;    /* Branco */
+    --cor-neutra-media: #ccc;       /* Cinza para bordas/disabled */
+    --cor-neutra-escura: #333333;   /* Texto Principal */
+    --cor-sucesso: var(--cor-primaria-base); 
+    --cor-erro: #F44336;            /* Vermelho (Validação/Erro) */
+    
+    /* TIPOGRAFIA HIERÁRQUICA */
+    --fonte-principal: 'Roboto', sans-serif;
+    --fonte-destaque: 'Poppins', sans-serif;
+    
+    --tamanho-xs: 0.8rem;
+    --tamanho-sm: 1rem;     
+    --tamanho-md: 1.25rem;
+    --tamanho-lg: 1.75rem;  /* H2 */
+    --tamanho-xl: 2.5rem;   /* H1 */
 
-    /* Tipografia */
-    --font-xl: 2.5rem;
-    --font-lg: 1.75rem;
-    --font-md: 1.25rem;
-    --font-sm: 1rem;
-    --font-xs: 0.875rem;
-
-    /* Espaçamentos Modulares */
-    --space-1: 8px;
-    --space-2: 16px;
-    --space-3: 24px;
-    --space-4: 32px;
-    --space-5: 48px;
-    --space-6: 64px;
-
-    /* Grid System */
-    --grid-columns: 12;
-    --grid-gap: 20px;
+    /* ESPAÇAMENTO MODULAR (Baseado em 8px) */
+    --espacamento-xs: 0.5rem;   /* 8px */
+    --espacamento-sm: 1rem;     /* 16px */
+    --espacamento-md: 1.5rem;   /* 24px */
+    --espacamento-lg: 2rem;     /* 32px */
+    --espacamento-xl: 3rem;     /* 48px */
+    
+    /* VARIÁVEIS DE LAYOUT */
+    --largura-max: 1200px;
+    --border-radius: 8px;
 }
 
-/* ================================
-   🌍 ESTILO GLOBAL
-================================ */
-body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    color: var(--color-neutral-800);
-    background-color: var(--color-neutral-200);
-    line-height: 1.6;
+/* ===============================
+   2. BASE RESET E TIPOGRAFIA
+   ================================ */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-h1,
-h2,
-h3 {
-    color: var(--color-primary-dark);
+body {
+    font-family: var(--fonte-principal);
+    font-size: var(--tamanho-sm);
+    line-height: 1.6;
+    color: var(--cor-neutra-escura);
+    background-color: var(--cor-neutra-fundo);
 }
 
-/* ================================
-   🧭 CABEÇALHO E MENU
-================================ */
+h1, h2, h3 {
+    font-family: var(--fonte-destaque);
+    line-height: 1.2;
+    margin-bottom: var(--espacamento-sm);
+}
+
+h1 { font-size: var(--tamanho-xl); color: var(--cor-primaria-base); }
+h2 { font-size: var(--tamanho-lg); color: var(--cor-secundaria-base); border-bottom: 2px solid var(--cor-secundaria-base); padding-bottom: 0.2em; }
+h3 { font-size: var(--tamanho-md); color: var(--cor-primaria-base); }
+
+p { margin-bottom: var(--espacamento-sm); }
+
+a {
+    color: var(--cor-primaria-base);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+a:hover {
+    color: var(--cor-primaria-escuro);
+    text-decoration: underline;
+}
+
+/* ===============================
+   3. LAYOUT PRINCIPAL (GRID & FLEXBOX)
+   ================================ */
+
+/* Grid Container para centralizar e dar largura máxima */
+.grid-container {
+    max-width: var(--largura-max);
+    margin: 0 auto;
+    padding: 0 var(--espacamento-sm);
+}
+
+/* Header */
 .header {
-    background-color: var(--color-neutral-800);
-    color: var(--color-neutral-100);
-    padding: var(--space-2) 0;
+    background: var(--cor-neutra-clara);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
 .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 90%;
-    margin: auto;
+    max-width: var(--largura-max);
+    margin: 0 auto;
+    padding: var(--espacamento-sm) var(--espacamento-md);
 }
-
-.logo {
-    width: 80px;
-    margin-right: var(--space-2);
-}
-
 .logo-area {
     display: flex;
     align-items: center;
-    gap: var(--space-1);
+    gap: var(--espacamento-sm);
+}
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.header h1 {
+    font-size: var(--tamanho-md);
+    margin: 0;
 }
 
-.navbar .menu {
+/* Seções de Conteúdo */
+.section {
+    background: var(--cor-neutra-clara);
+    padding: var(--espacamento-lg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: var(--espacamento-lg);
+}
+
+/* Layout Flex para seções internas (ex: Hero) */
+.flex {
     display: flex;
-    gap: var(--space-3);
+    gap: var(--espacamento-lg);
+    align-items: flex-start;
+}
+.flex > * {
+    flex: 1;
+    min-width: 0; /* Correção de flex-item */
+}
+.img-responsive img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--cor-neutra-escura);
+    color: var(--cor-neutra-clara);
+    padding: var(--espacamento-lg) 0;
+    text-align: center;
+    line-height: 1.8;
+}
+.footer h2 {
+    color: var(--cor-secundaria-base);
+    border-bottom: none;
+    margin-bottom: var(--espacamento-sm);
+}
+.footer a {
+    color: var(--cor-secundaria-claro);
+}
+
+/* Endereço de Doação */
+address {
+    background: #fff3e0; /* Cor suave de destaque */
+    padding: var(--espacamento-sm);
+    border-left: 5px solid var(--cor-secundaria-base);
+    border-radius: 4px;
+    margin: var(--espacamento-md) 0;
+    font-style: normal;
+    color: var(--cor-neutra-escura);
+}
+
+
+/* ===============================
+   4. NAVEGAÇÃO
+   ================================ */
+.navbar ul {
     list-style: none;
+    display: flex;
+    gap: var(--espacamento-md);
 }
 
-.menu a {
-    color: var(--color-neutral-100);
+.navbar a {
+    font-weight: 500;
+    padding: var(--espacamento-xs) var(--espacamento-sm);
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: var(--cor-primaria-base);
+    color: var(--cor-neutra-clara);
     text-decoration: none;
-    font-weight: bold;
 }
 
-.menu a:hover {
-    color: var(--color-primary);
-}
-
-/* Dropdown */
+/* Dropdown Submenu */
 .dropdown {
     position: relative;
 }
-
 .submenu {
     display: none;
     position: absolute;
-    background: var(--color-neutral-100);
-    color: var(--color-neutral-800);
-    list-style: none;
-    padding: var(--space-1);
+    top: 100%;
+    left: 0;
+    background: var(--cor-neutra-clara);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
+    z-index: 10;
+    min-width: 150px;
+    padding: var(--espacamento-xs) 0;
 }
-
-.dropdown:hover .submenu {
+.dropdown:hover .submenu,
+.submenu.show { /* Classe .show para o JS, se necessário */
     display: block;
 }
+.submenu li {
+    padding: 0;
+}
+.submenu a {
+    display: block;
+    padding: var(--espacamento-xs) var(--espacamento-sm);
+    white-space: nowrap;
+    color: var(--cor-neutra-escura);
+}
+.submenu a:hover {
+    background-color: var(--cor-neutra-fundo);
+}
 
-/* Menu mobile */
+/* Menu Mobile (Hambúrguer) */
 .menu-toggle {
-    display: none;
+    display: none; /* Esconde por padrão no desktop */
     background: none;
     border: none;
-    color: white;
-    font-size: var(--font-lg);
+    font-size: var(--tamanho-lg);
+    color: var(--cor-primaria-base);
+    cursor: pointer;
 }
 
-.menu.active {
-    display: block;
-}
-
-/* ================================
-   🧱 GRID E FLEX
-================================ */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(var(--grid-columns), 1fr);
-    gap: var(--grid-gap);
-    width: 90%;
-    margin: var(--space-5) auto;
-}
-
-.section {
-    grid-column: 1 / -1;
-    background: var(--color-neutral-100);
-    padding: var(--space-4);
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: var(--space-4);
-}
-
-.flex {
-    display: flex;
-    align-items: center;
-    gap: var(--space-3);
-}
-
-.img-responsive {
-    width: 50%;
-    border-radius: 10px;
-}
-
-/* ================================
-   🧩 COMPONENTES
-================================ */
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--space-3);
-}
-
-.card {
-    background: var(--color-neutral-100);
-    border: 1px solid var(--color-neutral-200);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s;
-}
-
-.card:hover {
-    transform: scale(1.02);
-}
-
-.card-body {
-    padding: var(--space-2);
-}
-
-.badge {
-    display: inline-block;
-    padding: 4px 8px;
-    border-radius: 12px;
-    font-size: var(--font-xs);
-    color: #fff;
-}
-
-.badge.primary {
-    background: var(--color-primary);
-}
-
-.badge.secondary {
-    background: var(--color-secondary);
-}
+/* ===============================
+   5. COMPONENTES DE INTERFACE
+   ================================ */
 
 /* Botões */
 .btn {
     display: inline-block;
-    padding: 10px 16px;
-    border-radius: 6px;
-    font-weight: bold;
-    border: none;
+    padding: var(--espacamento-sm) var(--espacamento-md);
+    border-radius: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
     cursor: pointer;
-    margin-top: var(--space-2);
+    text-align: center;
+    border: none;
+    transition: background-color 0.3s, opacity 0.3s;
 }
-
 .btn.primary {
-    background: var(--color-primary);
-    color: #fff;
+    background-color: var(--cor-primaria-base);
+    color: var(--cor-neutra-clara);
 }
-
-.btn.primary:hover {
-    background: var(--color-primary-dark);
+.btn.primary:hover, .btn.primary:focus {
+    background-color: var(--cor-primaria-escuro);
 }
-
 .btn.secondary {
-    background: var(--color-secondary);
-    color: #fff;
+    background-color: var(--cor-secundaria-base);
+    color: var(--cor-neutra-escura);
+}
+.btn.secondary:hover, .btn.secondary:focus {
+    background-color: var(--cor-secundaria-claro);
+}
+.btn:active {
+    opacity: 0.8;
+}
+.btn:disabled {
+    background-color: var(--cor-neutra-media);
+    cursor: not-allowed;
+    color: var(--cor-neutra-escura);
 }
 
-.btn.secondary:hover {
-    background: var(--color-secondary-dark);
+/* Badges e Tags */
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: var(--tamanho-xs);
+    font-weight: 700;
+    margin-right: var(--espacamento-xs);
+    margin-top: var(--espacamento-xs);
+}
+.badge.primary {
+    background-color: var(--cor-primaria-base);
+    color: var(--cor-neutra-clara);
+}
+.badge.secondary {
+    background-color: var(--cor-secundaria-base);
+    color: var(--cor-neutra-escura);
 }
 
-/* Alertas */
-.alert {
-    padding: var(--space-2);
-    border-radius: 6px;
-    margin-top: var(--space-3);
-    font-weight: bold;
-}
-
-.alert.success {
-    background: var(--color-success);
-    color: #fff;
-}
-
-/* Formulários */
+/* Formulários Estilizados */
 .form {
     display: flex;
     flex-direction: column;
-    gap: var(--space-2);
+    gap: var(--espacamento-sm);
+    margin-top: var(--espacamento-md);
 }
 
-input,
-textarea {
-    padding: var(--space-2);
-    border-radius: 6px;
-    border: 1px solid var(--color-neutral-400);
+.form input,
+.form textarea {
+    padding: var(--espacamento-sm);
+    border-radius: 4px;
+    border: 1px solid var(--cor-neutra-media);
+    font-family: var(--fonte-principal);
+    font-size: var(--tamanho-sm);
+    transition: border-color 0.3s;
 }
 
-input:focus,
-textarea:focus {
+.form input:focus,
+.form textarea:focus {
     outline: none;
-    border-color: var(--color-primary);
+    border-color: var(--cor-primaria-base);
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
 }
 
-/* ================================
-   🦶 RODAPÉ
-================================ */
-.footer {
-    background: var(--color-neutral-800);
-    color: var(--color-neutral-100);
+/* Validação Visual de Erro (para o JavaScript) */
+.form input.error,
+.form textarea.error {
+    border-color: var(--cor-erro);
+    box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.2);
+}
+
+
+/* Cards Responsivos (Projetos) */
+.card-grid {
+    display: grid;
+    /* 12 Colunas do Grid Customizado */
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--espacamento-lg);
+    margin-top: var(--espacamento-md);
+}
+
+.card {
+    grid-column: span 6; /* 2 colunas em telas médias */
+    display: flex;
+    flex-direction: column;
+    background: var(--cor-neutra-clara);
+    border-radius: var(--border-radius);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+    border-top: 5px solid var(--cor-primaria-base);
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+.card figure img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+.card-body {
+    padding: var(--espacamento-md);
+    flex-grow: 1; /* Garante que o body preencha o espaço restante */
+}
+.card h3 {
+    margin-top: 0;
+    margin-bottom: var(--espacamento-xs);
+}
+
+
+/* Estilo Gráfico de Barras */
+#estatisticas .div-barra {
+    /* Força o uso da cor primária e define a largura */
+    background: var(--cor-primaria-base) !important;
+    width: 30px;
+    margin: 0 auto;
+    border-radius: 3px 3px 0 0;
+}
+#estatisticas table {
+    margin-top: var(--espacamento-sm);
+}
+#estatisticas td {
+    padding: 5px 10px;
     text-align: center;
-    padding: var(--space-3);
+    vertical-align: bottom;
 }
 
-/* ================================
-   📱 RESPONSIVIDADE
-================================ */
-@media (max-width: 1200px) {
-    .grid-container {
-        width: 95%;
-    }
+
+/* ===============================
+   6. COMPONENTES DE FEEDBACK (JS)
+   ================================ */
+
+/* MODAL */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+.modal-content {
+    background-color: var(--cor-neutra-clara);
+    padding: var(--espacamento-lg);
+    border-radius: var(--border-radius);
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transform: scale(0.9);
+    transition: transform 0.3s;
+}
+.modal.active .modal-content {
+    transform: scale(1);
+}
+.modal-content h3 {
+    color: var(--cor-secundaria-base);
+    margin-bottom: var(--espacamento-sm);
 }
 
-@media (max-width: 992px) {
-    .flex {
-        flex-direction: column;
-    }
+/* TOASTS */
+.toast {
+    position: fixed;
+    bottom: var(--espacamento-lg);
+    right: var(--espacamento-lg);
+    padding: var(--espacamento-sm) var(--espacamento-md);
+    border-radius: 4px;
+    color: var(--cor-neutra-clara);
+    font-weight: 500;
+    z-index: 3000;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.3s, transform 0.3s;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.toast.success {
+    background-color: var(--cor-sucesso);
+}
+.toast.error {
+    background-color: var(--cor-erro);
 }
 
-@media (max-width: 768px) {
-    .navbar .menu {
-        display: none;
-        flex-direction: column;
-        background: var(--color-neutral-800);
-        padding: var(--space-2);
-    }
+/* ===============================
+   7. RESPONSIVIDADE (BREAKPOINTS)
+   ================================ */
 
+/* BP1: Móvel (320px - 599px) */
+@media (max-width: 599px) {
+    /* Menu Mobile */
+    .header-content {
+        padding: var(--espacamento-sm);
+    }
     .menu-toggle {
+        display: block; /* Mostra o botão hambúrguer */
+    }
+    .navbar {
+        /* Esconde e transforma a navegação em menu lateral */
+        position: fixed;
+        top: 0;
+        right: -300px; 
+        width: 250px;
+        height: 100%;
+        background-color: var(--cor-neutra-escura);
+        transition: right 0.3s;
+        padding-top: var(--espacamento-xl);
+        z-index: 1000;
+    }
+    .navbar.active { /* Ativado pelo JS */
+        right: 0;
+    }
+    .nav-menu {
+        flex-direction: column;
+        gap: var(--espacamento-sm);
+    }
+    .navbar a {
+        color: var(--cor-neutra-clara);
         display: block;
+        padding: var(--espacamento-sm);
+        text-align: left;
+    }
+    /* Layout */
+    .flex {
+        flex-direction: column; /* Pilha verticalmente */
+        align-items: stretch;
+    }
+    .card-grid .card {
+        grid-column: span 12; /* Uma coluna única */
     }
 }
 
-@media (max-width: 600px) {
-    h1 {
-        font-size: var(--font-lg);
+/* BP2: Tablet Pequeno (> 600px) */
+@media (min-width: 600px) and (max-width: 767px) {
+    .card-grid .card {
+        grid-column: span 12; /* Coluna única para facilitar leitura em portrait */
     }
 }
 
-@media (max-width: 400px) {
-    .btn {
-        width: 100%;
+/* BP3: Tablet Médio (> 768px) */
+@media (min-width: 768px) {
+    /* Layout */
+    .card-grid .card {
+        grid-column: span 6; /* 2 colunas */
+    }
+    /* Cadastro.html - Grid para 2 colunas */
+    main.grid-container:has(#estatisticas) .section:not(#estatisticas) {
+        /* Garante que o form e a doação fiquem lado a lado */
+        grid-column: span 6;
+    }
+}
+
+/* BP4: Desktop (> 1024px) */
+@media (min-width: 1024px) {
+    .card-grid .card {
+        grid-column: span 4; /* 3 colunas */
+    }
+}
+
+/* BP5: Desktop Largo (> 1200px) */
+@media (min-width: 1200px) {
+    .card-grid .card {
+        grid-column: span 3; /* 4 colunas */
     }
 }
