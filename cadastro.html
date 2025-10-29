@@ -1,81 +1,138 @@
-<p>Se quiser colaborar com doações físicas, traga em nossos pontos de coleta; ou use os dados abaixo para transferência:
-</p>
+<!doctype html>
+<html lang="pt-BR">
 
-<address>
-    Banco: Banco Exemplo<br />
-    Agência: 0000 — Conta: 000000-0<br />
-    CNPJ: 00.000.000/0000-00
-</address>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Cadastro e Doações — ONG</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
 
-<section id="estatisticas">
-    <h2>Estatísticas de Doações — Ano 2025</h2>
-    <p>Acompanhe o volume de doações recebidas ao longo do ano:</p>
-    <!DOCTYPE html>
-    <html lang="pt-BR">
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-area">
+                <img src="17683206-ilustracao-em-logotipo-de-silhueta-de-loja-de-animais-gratis-vetor.jpg"
+                    alt="Logo da ONG" class="logo">
+                <h1>Alimente um Cão de Rua</h1>
+            </div>
+            <nav class="navbar">
+                <ul class="menu nav-menu">
+                    <li class="dropdown">
+                        <a href="projetos.html">Projetos ▼</a>
+                        <ul class="submenu">
+                            <li><a href="projetos.html#resgate">Resgate</a></li>
+                            <li><a href="projetos.html#adocao">Adoção</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="cadastro.html">Quero Ajudar</a></li>
+                    <li><a href="index.html#sobre">Sobre</a></li>
+                    <li><a href="index.html#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" aria-label="Abrir Menu">☰</button>
+        </div>
+    </header>
 
-    <head>
-        <meta charset="UTF-8">
-        <title>Gráfico de Doações - ONG Alimente um Cão de Rua</title>
-    </head>
+    <main class="grid-container">
+        <section class="section" style="grid-column: span 8 / span 8;">
+            <h2>Cadastro de Voluntário</h2>
+            <p>Preencha o formulário para se juntar à nossa rede de voluntários.</p>
 
-    <body>
-        <h2>Gráfico de Doações — Ano 2025</h2>
-        <p>Representação das doações mensais em barras verticais (HTML puro)</p>
+            <form class="form">
+                <input type="text" name="nome" placeholder="Seu Nome Completo" required>
+                <input type="email" name="email" placeholder="Seu Melhor E-mail" required>
+                <input type="tel" name="telefone" placeholder="Telefone/WhatsApp">
+                <textarea name="mensagem" rows="4" placeholder="Fale um pouco sobre como gostaria de ajudar..." required></textarea>
+                <button type="submit" class="btn primary">Enviar Inscrição</button>
+            </form>
+        </section>
 
-        <table border="0" cellspacing="5" cellpadding="0" align="center">
-            <tr valign="bottom">
-                <td align="center">
-                    <div style="background:green; height:80px; width:30px;"></div>
-                    <small>Jan</small>
-                </td>
-                <td align="center">
-                    <div style="background:green; height:60px; width:30px;"></div>
-                    <small>Fev</small>
-                </td>
-                <td align="center">
-                    <div style="background:green; height:100px; width:30px;"></div>
-                    <small>Mar</small>
-                </td>
-                <td align="center">
-                    <div style="background:green; height:120px; width:30px;"></div>
-                    <small>Abr</small>
-                </td>
-                <td align="center">
-                    <div style="background:green; height:90px; width:30px;"></div>
-                    <small>Mai</small>
-                </td>
-                <td align="center">
-                    <div style="background:green; height:140px; width:30px;"></div>
-                    <small>Jun</small>
-                </td>
-                <td align="center">
-                    <div style="background:green; height:160px; width:30px;"></div>
-                    <small>Jul</small>
-                </td>
-                <td align="center">
-                    <div style="background:green; height:150px; width:30px;"></div>
-                    <small>Ago</small>
-                </td>
-                <td align="center">
-                    <div style="background:green; height:130px; width:30px;"></div>
-                    <small>Set</small>
-                </td>
-                <td align="center">
-                    <div style="background:green; height:180px; width:30px;"></div>
-                    <small>Out</small>
-                </td>
-                <td align="center">
-                    <div style="background:green; height:160px; width:30px;"></div>
-                    <small>Nov</small>
-                </td>
-                <td align="center">
-                    <div style="background:green; height:200px; width:30px;"></div>
-                    <small>Dez</small>
-                </td>
-            </tr>
-        </table>
+        <section class="section" style="grid-column: span 4 / span 4;">
+            <h2>Doações</h2>
+            <p>Se quiser colaborar com doações físicas, traga em nossos pontos de coleta; ou use os dados abaixo para transferência:</p>
 
-        <p align="center"><strong>Total arrecadado em 2025: R$ 74.700,00</strong></p>
-    </body>
+            <address>
+                Banco: Banco Exemplo<br />
+                Agência: 0000 — Conta: 000000-0<br />
+                CNPJ: 00.000.000/0000-00
+            </address>
 
-    </html>
+            <a href="#" class="btn secondary">Doar Agora (Link Externo)</a>
+        </section>
+
+        <section id="estatisticas" class="section">
+            <h2>Estatísticas de Doações — Ano 2025</h2>
+            <p>Acompanhe o volume de doações recebidas ao longo do ano:</p>
+            
+            <table border="0" cellspacing="5" cellpadding="0" align="center">
+                <tr valign="bottom">
+                    <td align="center">
+                        <div class="div-barra" style="height:80px;"></div>
+                        <small>Jan</small>
+                    </td>
+                    <td align="center">
+                        <div class="div-barra" style="height:60px;"></div>
+                        <small>Fev</small>
+                    </td>
+                    <td align="center">
+                        <div class="div-barra" style="height:100px;"></div>
+                        <small>Mar</small>
+                    </td>
+                    <td align="center">
+                        <div class="div-barra" style="height:120px;"></div>
+                        <small>Abr</small>
+                    </td>
+                    <td align="center">
+                        <div class="div-barra" style="height:90px;"></div>
+                        <small>Mai</small>
+                    </td>
+                    <td align="center">
+                        <div class="div-barra" style="height:140px;"></div>
+                        <small>Jun</small>
+                    </td>
+                    <td align="center">
+                        <div class="div-barra" style="height:160px;"></div>
+                        <small>Jul</small>
+                    </td>
+                    <td align="center">
+                        <div class="div-barra" style="height:150px;"></div>
+                        <small>Ago</small>
+                    </td>
+                    <td align="center">
+                        <div class="div-barra" style="height:130px;"></div>
+                        <small>Set</small>
+                    </td>
+                    <td align="center">
+                        <div class="div-barra" style="height:180px;"></div>
+                        <small>Out</small>
+                    </td>
+                    <td align="center">
+                        <div class="div-barra" style="height:160px;"></div>
+                        <small>Nov</small>
+                    </td>
+                    <td align="center">
+                        <div class="div-barra" style="height:200px;"></div>
+                        <small>Dez</small>
+                    </td>
+                </tr>
+            </table>
+
+            <p align="center"><strong>Total arrecadado em 2025: R$ 74.700,00</strong></p>
+        </section>
+    </main>
+
+    <footer id="contato" class="footer">
+        <div class="grid-container" style="margin: 0 auto; width: 100%;">
+            <h2>Contato</h2>
+            <p>Telefone/WhatsApp: <a href="tel:+5511999999999">+55 (11) 99999-9999</a></p>
+            <p>E-mail: <a href="mailto:contato@alimenteumcaoderua.org">contato@alimenteumcaoderua.org</a></p>
+            <p>Endereço: Rua Exemplo, 123 — Bairro — Cidade/UF</p>
+            <p>© <span id="ano">2025</span> Alimente um Cão de Rua — Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="Script.js"></script>
+</body>
+
+</html>
